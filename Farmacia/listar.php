@@ -62,18 +62,103 @@ if (isset($_POST['ordenarPor'])) {
     <title>Cadastro de Medicamentos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input, textarea, select {
-            display: block;
-            margin: 10px 0;
-            padding: 8px;
-            width: 300px;
-        }
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #a8e0ff, #c6f6d5);
+    color: #333;
+}
+h1 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5em;
+}
+h2 {
+    color: #333;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2em;
+}
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    transition: transform 0.3s;
+}
+form:hover {
+    transform: scale(1.02);
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #ff6b6b;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #ff3d3d;
+    outline: none;
+}
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #ff3d3d;
+    transform: translateY(-2px);
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+li {
+    background: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+li:hover {
+    transform: translateY(-2px);
+}
+
+strong {
+    display: inline-block;
+    width: 150px; 
+}
+.error {
+    color: #ff3d3d;
+    margin: 15px 0;
+    font-weight: bold;
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -105,6 +190,7 @@ if (isset($_POST['ordenarPor'])) {
         <label for="nomeBuscado">Nome do Medicamento:</label>
         <input type="text" id="nomeBuscado" name="nomeBuscado" required>
         <button type="submit">Buscar</button>
+        <button type="submit"><a href="estoque.php">Olhar Estoque</a></button>
     </form>
 
     <h2>Ordenar Medicamentos</h2>
