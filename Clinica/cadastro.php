@@ -160,6 +160,7 @@
             }
         }
 
+
         function isAdulto($data_nascimento) {
             $data_nascimento = new DateTime($data_nascimento);
             $data_atual = new DateTime();
